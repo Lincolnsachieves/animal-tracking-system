@@ -1,99 +1,64 @@
-# Animal Tracking System MVP
+\# 🐄 Animal Tracking System
 
-A simple starter project for tracking animals individually.
 
-## Stack
-- Frontend: HTML, CSS, JavaScript, Leaflet map
-- Backend: PHP (PDO)
-- Database: MySQL
 
-## Features in this MVP
-- Register animals
-- List all animals
-- Add animal locations
-- View latest location on a map
-- Simple dashboard cards
+A web-based livestock tracking system that allows farmers to monitor animals remotely.
 
-## Project Structure
-```
-animal-tracking-system/
-├── backend/
-│   ├── api/
-│   │   ├── animals.php
-│   │   └── locations.php
-│   ├── config/
-│   │   └── database.php
-│   └── db/
-│       └── schema.sql
-├── frontend/
-│   ├── assets/
-│   │   ├── app.js
-│   │   └── style.css
-│   └── index.html
-└── README.md
-```
 
-## 1) Create the database
-Import `backend/db/schema.sql` into MySQL.
 
-## 2) Update DB settings
-Edit `backend/config/database.php`.
+\## Features
 
-Default values:
-- host: localhost
-- dbname: animal_tracking
-- username: root
-- password: ""
+\- Add and manage animals
 
-## 3) Run locally
-### Backend (XAMPP / WAMP / Laragon / PHP server)
-Place the `backend` folder inside your web server root, or run:
-```bash
-php -S localhost:8000 -t backend
-```
+\- Track animal locations
 
-### Frontend
-Open `frontend/index.html` in your browser, or serve it with a simple server.
+\- Map-based visualization
 
-If the backend runs on another port/domain, edit the `API_BASE_URL` in `frontend/assets/app.js`.
+\- Backend API (PHP)
 
-## API Endpoints
-### Animals
-- `GET /api/animals.php` → list animals
-- `POST /api/animals.php` → create animal
+\- MySQL database
 
-### Locations
-- `GET /api/locations.php?animal_id=1` → list animal locations
-- `POST /api/locations.php` → create location record
 
-## Example POST body for animal
-```json
-{
-  "tag_number": "UG-COW-001",
-  "name": "Amina",
-  "species": "Cow",
-  "breed": "Ankole",
-  "sex": "Female",
-  "date_of_birth": "2023-02-12",
-  "owner_name": "Adrine Farm"
-}
-```
 
-## Example POST body for location
-```json
-{
-  "animal_id": 1,
-  "latitude": -0.6072,
-  "longitude": 30.6582,
-  "status": "Moving"
-}
-```
+\## Technologies
 
-## Startup idea for next version
-- Login/authentication
-- SMS alerts
-- Geofencing
-- Animal health records
-- Ear-tag device integration
-- Admin dashboard
-- Mobile app
+\- PHP
+
+\- MySQL
+
+\- HTML, CSS, JavaScript
+
+\- Leaflet Maps
+
+
+
+\## How to Run
+
+1\. Import database from backend/db/schema.sql
+
+2\. Configure database connection
+
+3\. Run backend server:
+
+&#x20;  php -S localhost:8000 -t backend
+
+4\. Open frontend/index.html
+
+
+
+\## Future Improvements
+
+\- GPS device integration
+
+\- SMS alerts
+
+\- Mobile app
+
+\- AI health monitoring
+
+
+
+\## Author
+
+Adrine
+
