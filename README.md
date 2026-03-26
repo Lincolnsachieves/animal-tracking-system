@@ -60,6 +60,6 @@ A web-based livestock tracking system that allows farmers to monitor animals rem
 
 \## Author
 
-LICOLN
+LINCOLN
 
 
