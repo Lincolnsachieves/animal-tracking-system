@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animal Tracking System</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <h1>Animal Tracking System</h1>
+            <p>Track animals individually and remotely</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="stats-grid">
+            <div class="card stat-card">
+                <h3>Total Animals</h3>
+                <p id="totalAnimals">0</p>
+            </div>
+            <div class="card stat-card">
+                <h3>Last Active</h3>
+                <p id="lastActive">-</p>
+            </div>
+            <div class="card stat-card">
+                <h3>Tracked Owners</h3>
+                <p id="trackedOwners">0</p>
+            </div>
+        </section>
+
+        <section class="grid-2">
+            <div class="card">
+                <h2>Add Animal</h2>
+                <form id="animalForm">
+                    <div class="form-row">
+                        <input type="text" id="tag_number" placeholder="Tag Number" required />
+                        <input type="text" id="name" placeholder="Animal Name" required />
+                    </div>
+                    <div class="form-row">
+                        <input type="text" id="species" placeholder="Species" required />
+                        <input type="text" id="breed" placeholder="Breed" />
+                    </div>
+                    <div class="form-row">
+                        <select id="sex">
+                            <option value="Unknown">Sex</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <input type="date" id="date_of_birth" />
+                    </div>
+                    <div class="form-row">
+                        <input type="text" id="owner_name" placeholder="Owner Name" required />
+                    </div>
+                    <button type="submit">Save Animal</button>
+                </form>
+                <p id="animalMessage" class="message"></p>
+            </div>
+
+            <div class="card">
+                <h2>Add Location</h2>
+                <form id="locationForm">
+                    <div class="form-row">
+                        <select id="animal_id" required></select>
+                        <input type="text" id="status" placeholder="Status e.g. Grazing" />
+                    </div>
+                    <div class="form-row">
+                        <input type="number" step="any" id="latitude" placeholder="Latitude" required />
+                        <input type="number" step="any" id="longitude" placeholder="Longitude" required />
+                    </div>
+                    <button type="submit">Save Location</button>
+                </form>
+                <p id="locationMessage" class="message"></p>
+            </div>
+        </section>
+
+        <section class="card map-card">
+            <div class="section-head">
+                <h2>Animal Map</h2>
+                <button id="refreshBtn" class="secondary-btn">Refresh</button>
+            </div>
+            <div id="map"></div>
+        </section>
+
+        <section class="card">
+            <h2>Animal List</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tag</th>
+                            <th>Name</th>
+                            <th>Species</th>
+                            <th>Owner</th>
+                            <th>Status</th>
+                            <th>Last Seen</th>
+                        </tr>
+                    </thead>
+                    <tbody id="animalTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="./assets/app.js"></script>
+</body>
+</html>
